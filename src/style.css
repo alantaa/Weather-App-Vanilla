@@ -1,0 +1,36 @@
+body {
+  background: linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
+  color: white;
+  text-align: center;
+  padding: 50px 0px;
+  font-family: "Poppins", sans-serif;
+  margin: 0px 0px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+.today {
+  font-size: 100px;
+  padding: 0px 0px 10px;
+}
+.emoji {
+  font-size: 35px;
+}
+.temperature {
+  font-size: 70px;
+}
+.degree {
+  font-size: 41px;
+}
+.bar {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+#description {
+  text-transform: capitalize;
+}
