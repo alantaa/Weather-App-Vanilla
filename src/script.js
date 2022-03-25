@@ -61,9 +61,7 @@ h2.innerHTML = `${hours}:${minutes}`;
 
 function showTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#temperature").innerHTML = Math.round(celsuisTemp);
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -71,6 +69,8 @@ function showTemp(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+
+  celsuisTemp = response.data.main.temp;
 }
 
 function searchCity(city) {
@@ -89,9 +89,6 @@ function searchLocation(position) {
   axios.get(apiUrl).then(showTemp);
 }
 
-let searchForm = document.querySelector("#form1");
-searchForm.addEventListener("submit", handleSubmit);
-
 function getGeoLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -105,7 +102,31 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(getGeoLocation);
 }
 
+function displayFehren(event) {
+  event.preventDefault();
+  let tempE = document.querySelector("#temperature");
+  let fahrenTemp = (celsuisTemp * 9) / 5 + 32;
+  tempE.innerHTML = Math.round(fahrenTemp);
+}
+
+function displayCelsius(event) {
+  event.preventDefault();
+  let tempE = document.querySelector("#temperature");
+  tempE.innerHTML = Math.round(celsuisTemp);
+}
+
+let searchForm = document.querySelector("#form1");
+searchForm.addEventListener("submit", handleSubmit);
+
+let celsuisTemp = null;
+
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let fahrenLink = document.querySelector("#fahren-link");
+fahrenLink.addEventListener("click", displayFehren);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
 
 searchCity("New York");

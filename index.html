@@ -77,17 +77,18 @@
       <h5 id="city"></h5>
       <h6 id="description"></h6>
       
-      <div><span class="temperature" id="temperature"></span>  <sup class="degree">°C </sup></div>
+      <div><span class="temperature" id="temperature"></span>
+       <span class="units">
+         <a href="#" id="celsius-link">°C</a>
+        |
+        <a href="#" id="fahren-link">°F</a> 
+      </span>
+      </div>
     
-      <ul>
-         <li class="tempUnits">
-          <a href="#" id="celsius-link">°C</a>
-          |
-          <a href="#" id="fahren-link">°F</a>
-        </li>
-
+ 
         <br />
-
+        
+      <ul>
         <li>Humidity: <span id="humidity"></span>%</li>
 
         <li>Wind: <span id="wind"></span>km/h</li>
