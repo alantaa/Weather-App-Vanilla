@@ -61,7 +61,9 @@ h2.innerHTML = `${hours}:${minutes}`;
 
 function showTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(celsuisTemp);
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
