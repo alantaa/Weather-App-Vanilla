@@ -31,8 +31,21 @@ ul {
 #description {
   text-transform: capitalize;
 }
+#celsius-link {
+  text-decoration: none;
+}
+#fahren-link {
+  text-decoration: none;
+}
 .units {
   position: relative;
   font-size: 16px;
   top: -40px;
+}
+.units .active {
+  color: white;
+  cursor: default;
+}
+.units .active:hover {
+  text-decoration: none;
 }

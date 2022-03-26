@@ -107,6 +107,9 @@ function getCurrentLocation(event) {
 function displayFehren(event) {
   event.preventDefault();
   let tempE = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenLink.classList.add("active");
+
   let fahrenTemp = (celsuisTemp * 9) / 5 + 32;
   tempE.innerHTML = Math.round(fahrenTemp);
 }
@@ -115,6 +118,8 @@ function displayCelsius(event) {
   event.preventDefault();
   let tempE = document.querySelector("#temperature");
   tempE.innerHTML = Math.round(celsuisTemp);
+  celsiusLink.classList.add("active");
+  fahrenLink.classList.remove("active");
 }
 
 let searchForm = document.querySelector("#form1");
