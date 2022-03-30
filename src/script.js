@@ -1,11 +1,8 @@
 const apiKey = "2ada9023ee6b674c5142a0f7109917e0";
 
 let now = new Date();
-
-let h6 = document.querySelector("h6");
-let h2 = document.querySelector("h2");
-
 let date = now.getDate();
+
 let hours = now.getHours();
 if (hours < 10) {
   hours = `0${hours}`;
@@ -56,15 +53,45 @@ const dayWithText = function (d) {
   }
 };
 
+let h6 = document.querySelector("h6");
+let h2 = document.querySelector("h2");
+
 h6.innerHTML = `${day}, ${dayWithText(date)} ${month}`;
 h2.innerHTML = `${hours}:${minutes}`;
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["a", "b", "c", "d", "e"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-sm">
+      <div class="weather-forecast-date">${day}</div>
+      <img
+        src="http://openweathermap.org/img/wn/50d@2x.png"
+        alt=""
+        width="42"
+      />
+      <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperature-max"> 1° </span>
+        <span class="weather-forecast-temperature-min"> 0° </span>
+      </div>
+    </div>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function showTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -143,3 +170,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
 searchCity("New York");
+displayForecast();
