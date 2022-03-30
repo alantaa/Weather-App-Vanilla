@@ -53,3 +53,8 @@ ul {
 .weather-forecast-temperature-min {
   opacity: 0.5;
 }
+.forecast-description {
+  text-transform: capitalize;
+  font-size: 13px;
+  opacity: 0.6;
+}
