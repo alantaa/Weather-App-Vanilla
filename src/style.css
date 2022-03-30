@@ -12,6 +12,7 @@ ul {
   padding: 0;
   margin: 0;
   font-size: 12px;
+  opacity: 0.4;
 }
 
 #icon {
@@ -31,6 +32,7 @@ ul {
 }
 #description {
   text-transform: capitalize;
+  opacity: 0.5;
 }
 #celsius-link {
   text-decoration: none;
