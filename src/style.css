@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
+  background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
   color: white;
   text-align: center;
   padding: 50px 0px;
@@ -14,7 +14,6 @@ ul {
   font-size: 12px;
 }
 
-/* icon */
 #icon {
   font-size: 100px;
   padding: 0px 0px 0px;
