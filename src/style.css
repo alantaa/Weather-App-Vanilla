@@ -60,3 +60,8 @@ ul {
   font-size: 13px;
   opacity: 0.6;
 }
+@media (max-width: 576px) {
+  .location {
+    display: none;
+  }
+}
