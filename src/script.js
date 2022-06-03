@@ -74,11 +74,11 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 4) {
       forecastHTML =
         forecastHTML +
         `
-    <div class="col-sm">
+    <div class="col-3 control-label">
       <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
          <div class="forecast-description"> ${
            forecastDay.weather[0].description
