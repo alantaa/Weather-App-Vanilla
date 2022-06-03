@@ -61,7 +61,8 @@ ul {
   opacity: 0.6;
 }
 @media (max-width: 576px) {
-  .location {
+  .location,
+  .forecast-description {
     display: none;
   }
 }
